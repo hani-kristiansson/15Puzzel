@@ -199,40 +199,40 @@ public class GameBoard extends JFrame {
                 }
             } else if (direction == 1) {
                 // if direction is 1 move right
-                int newEmptyX = emptyRow;
-                int newEmptyY = emptyColumn + 1;
-                if (newEmptyY <= 3) {
+                int newEmptyRow = emptyRow;
+                int newEmptyColumn = emptyColumn + 1;
+                if (newEmptyColumn <= 3) {
                     //Move number in above into empty position
-                    numbers[emptyRow][emptyColumn] = numbers[newEmptyX][newEmptyY];
+                    numbers[emptyRow][emptyColumn] = numbers[newEmptyRow][newEmptyColumn];
                     //Should be the empty position now
-                    numbers[newEmptyX][newEmptyY] = "";
-                    emptyColumn = newEmptyY;
+                    numbers[newEmptyRow][newEmptyColumn] = "";
+                    emptyColumn = newEmptyColumn;
                     clickCounter++;
                 }
 
             } else if (direction == 2) {
                 // if direction is 2 move down
-                int newEmptyX = emptyRow + 1;
-                int newEmptyY = emptyColumn;
-                if (newEmptyX <= 3) {
+                int newEmptyRow = emptyRow + 1;
+                int newEmptyColumn = emptyColumn;
+                if (newEmptyRow <= 3) {
                     //Move number in above into empty position
-                    numbers[emptyRow][emptyColumn] = numbers[newEmptyX][newEmptyY];
+                    numbers[emptyRow][emptyColumn] = numbers[newEmptyRow][newEmptyColumn];
                     //Should be the empty position now
-                    numbers[newEmptyX][newEmptyY] = "";
-                    emptyRow = newEmptyX;
+                    numbers[newEmptyRow][newEmptyColumn] = "";
+                    emptyRow = newEmptyRow;
                     clickCounter++;
                 }
 
             } else {
                 // else direction must be 3 and we move left
-                int newEmptyX = emptyRow;
-                int newEmptyY = emptyColumn - 1;
-                if (newEmptyY >= 0) {
+                int newEmptyRow = emptyRow;
+                int newEmptyColumn = emptyColumn - 1;
+                if (newEmptyColumn >= 0) {
                     //Move number in above into empty position
-                    numbers[emptyRow][emptyColumn] = numbers[newEmptyX][newEmptyY];
+                    numbers[emptyRow][emptyColumn] = numbers[newEmptyRow][newEmptyColumn];
                     //Should be the empty position now
-                    numbers[newEmptyX][newEmptyY] = "";
-                    emptyColumn = newEmptyY;
+                    numbers[newEmptyRow][newEmptyColumn] = "";
+                    emptyColumn = newEmptyColumn;
                     clickCounter++;
                 }
             }
