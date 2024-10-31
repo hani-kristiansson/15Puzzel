@@ -116,7 +116,7 @@ public class GameBoard extends JFrame {
             buttons[row + 1][column].setText(buttons[row][column].getText());
             buttons[row][column].setText("");
         }
-        isGameOver();
+        isGameFinished();
     }
 
     private void shuffleNumbers() {
@@ -212,7 +212,7 @@ public class GameBoard extends JFrame {
         }
     }
 
-    private void isGameOver() {
+    private void isGameFinished() {
 
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 4; j++) {
