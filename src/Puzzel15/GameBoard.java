@@ -98,9 +98,6 @@ public class GameBoard extends JFrame {
         clickCountLabel.setFont(new Font("Arial", Font.BOLD, 20));
 
 
-
-
-
         setSize(400, 400);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -140,11 +137,12 @@ public class GameBoard extends JFrame {
             clickCounter++;
 
         }
-        isGameFinished();
+
         clickCountLabel.setText("click count: " + clickCounter);
 
-        infoPanel.repaint();
+        isGameFinished();
 
+        infoPanel.repaint();
     }
 
     private void shuffleNumbers() {
