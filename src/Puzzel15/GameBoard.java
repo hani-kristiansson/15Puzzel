@@ -15,6 +15,7 @@ public class GameBoard extends JFrame {
 
 
     int clickCounter = 0;
+    int tempClickCounter = 0;
 
     final String[][] correctSolution =
             {{"1", "2", "3", "4"},
@@ -93,11 +94,9 @@ public class GameBoard extends JFrame {
         //Info panel
         infoPanel.setLayout(new GridLayout(1, 2));
         infoPanel.setMaximumSize(new Dimension(400, 100));
-        JLabel timer = new JLabel("timer");
-        infoPanel.add(timer);
         infoPanel.add(clickCountLabel);
         clickCountLabel.setFont(new Font("Arial", Font.BOLD, 20));
-        timer.setFont(new Font("Arial", Font.BOLD, 20));
+
 
 
 
@@ -150,6 +149,8 @@ public class GameBoard extends JFrame {
 
     private void shuffleNumbers() {
 
+        clickCounter = 0;
+        clickCountLabel.setText("click count: " + clickCounter);
         Random random = new Random();
 
         for (int i = 0; i < 200; i++) {
@@ -171,6 +172,11 @@ public class GameBoard extends JFrame {
     }
 
     private void shuffleNumbersEasy() {
+
+        clickCounter = 0;
+        clickCountLabel.setText("click count: " + clickCounter);
+        tempClickCounter = clickCounter;
+
 
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 4; j++) {
@@ -195,7 +201,6 @@ public class GameBoard extends JFrame {
                     //Should be the empty position now
                     numbers[newEmptyRow][newEmptyColumn] = "";
                     emptyRow = newEmptyRow;
-                    clickCounter++;
                 }
             } else if (direction == 1) {
                 // if direction is 1 move right
@@ -207,7 +212,7 @@ public class GameBoard extends JFrame {
                     //Should be the empty position now
                     numbers[newEmptyRow][newEmptyColumn] = "";
                     emptyColumn = newEmptyColumn;
-                    clickCounter++;
+
                 }
 
             } else if (direction == 2) {
@@ -220,7 +225,7 @@ public class GameBoard extends JFrame {
                     //Should be the empty position now
                     numbers[newEmptyRow][newEmptyColumn] = "";
                     emptyRow = newEmptyRow;
-                    clickCounter++;
+
                 }
 
             } else {
@@ -233,11 +238,12 @@ public class GameBoard extends JFrame {
                     //Should be the empty position now
                     numbers[newEmptyRow][newEmptyColumn] = "";
                     emptyColumn = newEmptyColumn;
-                    clickCounter++;
+
                 }
             }
         }
 
+        clickCounter = tempClickCounter;
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 4; j++) {
                 buttons[i][j].setText(numbers[i][j]);
