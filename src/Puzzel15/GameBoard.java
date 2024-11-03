@@ -122,12 +122,12 @@ public class GameBoard extends JFrame {
         if (buttons[row][column].getText().isBlank()) {
             System.out.println("You pushed empty button");
 
-            // en tom knapp flyttas siffran om det finns en tom knapp i närheten (upp, ner, vänster, höger)
-            // klickräknaren ökas
+            // om det finns en tom knapp i närheten så flyttar siffran (upp, ner, vänster, höger)
         } else if (row - 1 >= 0 && buttons[row - 1][column].getText().isBlank()) {
             System.out.println("Above was empty, can move");
             buttons[row - 1][column].setText(buttons[row][column].getText());
             buttons[row][column].setText("");
+            // klickräknaren ökas
             clickCounter++;
 
         } else if (column - 1 >= 0 && buttons[row][column - 1].getText().isBlank()) {
