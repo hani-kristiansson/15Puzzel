@@ -164,6 +164,7 @@ public class GameBoard extends JFrame {
         clickCountLabel.setText("click count: " + clickCounter);
         Random random = new Random();
 
+        // Välja 2 slump plats och byter nummer på dem. Gör den 200 gånger så att det är välblandat
         for (int i = 0; i < 200; i++) {
             int row1 = random.nextInt(4); //0 till 3
             int column1 = random.nextInt(4);
@@ -175,6 +176,7 @@ public class GameBoard extends JFrame {
             numbers[row2][column2] = temp;
         }
 
+        // efter shuffle, uppdatera spel plan (gameboard)
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 4; j++) {
                 buttons[i][j].setText(numbers[i][j]);
@@ -201,7 +203,7 @@ public class GameBoard extends JFrame {
 
         // därefter görs endast 10 random drag från den tomma platsen
         for (int i = 0; i < 10; i++) {
-            int direction = random.nextInt(4);
+            int direction = random.nextInt(4); // siffror val 0,1,2,3
 
             if (direction == 0) {
                 // if direction is 0 move up
@@ -256,6 +258,7 @@ public class GameBoard extends JFrame {
         }
 
         clickCounter = tempClickCounter;
+        // efter shuffle, uppdatera spel plan (gameboard)
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 4; j++) {
                 buttons[i][j].setText(numbers[i][j]);
