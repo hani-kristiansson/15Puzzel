@@ -155,7 +155,7 @@ public class GameBoard extends JFrame {
 
         clickCountLabel.setText("click count: " + clickCounter);
 
-        // när spelet är klart
+        // den kontrollerar om spelet är klart
         isGameFinished();
 
         infoPanel.repaint();
