@@ -63,11 +63,15 @@ public class GameBoard extends JFrame {
 
                 // varje knapp får en ActionListener som anropar method när knappen klickas
                 buttons[i][j].addActionListener(ae -> buttonPushed(finalI, finalJ));
-                /*
-                ae = ActionEvent e
-                actionPerformed(ActionEvent e) {buttonPushed(finalI,j);}
-                 */
 
+/*
+                buttons[i][j].addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent ae) {
+                        buttonPushed(i, j);
+                    }
+                });
+*/
                 gamePanel.add(buttons[i][j]);
             }
         }
